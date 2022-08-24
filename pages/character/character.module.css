@@ -1,0 +1,14 @@
+.card {
+    text-decoration: none;
+}
+
+.image-holder{
+    display:block;
+    width:100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.link{
+    text-decoration: none;
+}
