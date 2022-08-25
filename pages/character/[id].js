@@ -12,7 +12,7 @@ const apiUrl = 'http://localhost:3000/api/avatar/';
 // export async function getStaticPaths() {
 //     const res = await fetch(apiUrl)
 //     const avatarsData = await res.json()
-  
+
 //     const paths = avatarsData.map((avatarData) => ({
 //       params: { id: avatarData._id },
 //     }))
@@ -23,7 +23,7 @@ const apiUrl = 'http://localhost:3000/api/avatar/';
 
 //     const res = await fetch(`${apiUrl}/${params.id}`)
 //     const avatarData = await res.json()
-  
+
 //     return {
 //       props: {
 //         avatarData,
@@ -34,10 +34,8 @@ const apiUrl = 'http://localhost:3000/api/avatar/';
 
 
 export default function Home() {
-    const router = useRouter();
-    console.log(`>>> router <<<`);
-    console.log(router);
-    var id = router.query.id;
+    const { query, isReady } = useRouter();
+    var id = query.id;
 
     const [character, setCharacter] = useState(null);
     const [count, setCount] = useState(-1);
@@ -58,10 +56,10 @@ export default function Home() {
 
 
     useEffect(() => {
-        setTimeout(() => {
+        if (isReady) {
             fetchData();
-        }, 500)
-    }, null);
+        }
+    }, [isReady]);
 
 
     return (
