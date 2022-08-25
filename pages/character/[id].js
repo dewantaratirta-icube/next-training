@@ -8,31 +8,6 @@ import { useEffect, useState } from 'react';
 
 const apiUrl = 'http://localhost:3000/api/avatar/';
 
-
-// export async function getStaticPaths() {
-//     const res = await fetch(apiUrl)
-//     const avatarsData = await res.json()
-
-//     const paths = avatarsData.map((avatarData) => ({
-//       params: { id: avatarData._id },
-//     }))
-//     return { paths, fallback: false }
-// }
-
-// export async function getStaticProps({ params }) {
-
-//     const res = await fetch(`${apiUrl}/${params.id}`)
-//     const avatarData = await res.json()
-
-//     return {
-//       props: {
-//         avatarData,
-//       },
-//       revalidate: 10, // In seconds
-//     }
-// }
-
-
 export default function Home() {
     const { query, isReady } = useRouter();
     var id = query.id;
