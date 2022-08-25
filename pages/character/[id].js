@@ -4,21 +4,22 @@ import data from '../../public/data';
 import { useRouter } from "next/router"
 import Style from './character.module.css';
 import { useEffect, useState } from 'react';
+import datajson from "../../public/data.json";
 // import Link from 'next/link';
 
-const apiUrl = 'http://localhost:3000/api/avatar/';
+const apiUrl = '/api/avatar/';
 
 export default function Home() {
     const { query, isReady } = useRouter();
     var id = query.id;
 
     const [character, setCharacter] = useState(null);
-    const [count, setCount] = useState(-1);
 
     const fetchData = async () => {
-        if (count > 0) return;
-        let data = await fetch(apiUrl + id);
-        let result = await data.json();
+        // let data = await fetch(apiUrl + id, { mode: 'cors' });
+        // let result = await data.json();
+        // datajson;
+        let result = datajson.find( el => el._id == id);
 
         // count++;
         if (result.hasOwnProperty('error')) {
@@ -26,7 +27,6 @@ export default function Home() {
         } else {
             setCharacter(result);
         }
-        setCount((count + 1));
     }
 
 

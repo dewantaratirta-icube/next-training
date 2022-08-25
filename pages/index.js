@@ -3,8 +3,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
+import datajson from "../public/data.json";
 
-const apiUrl = 'http://localhost:3000/api/avatar';
+const apiUrl = '/api/avatar';
 
 const DynamicHello = dynamic(() => import('@/components/Hello'), {
   loading: () => <p>Loading the module</p>,
@@ -19,9 +20,10 @@ export default function Home() {
   }
 
   const fetchData = async () => {
-    let data = await fetch(apiUrl);
-    let result = await data.json();
-    setChar(result);
+    // let data = await fetch(apiUrl,{mode:'cors'});
+    // let result = await data.json();
+    console.log(datajson)
+    setChar(datajson);
   }
 
   useEffect(() => {
