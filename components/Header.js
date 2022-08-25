@@ -9,12 +9,17 @@ const Header = () => {
             <ul>
                 <li className="logo">
                     <Link href="/">
-                        <Image src="/logo.svg" width={80} height={80}/>
+                        <Image src="/logo.svg" width={80} height={80} />
                     </Link>
                 </li>
                 <li className="title">
                     <Link href="/">
-                    Wiki Avatar
+                        Wiki Avatar
+                    </Link>
+                </li>
+                <li className="title">
+                    <Link href="/backoffice">
+                        Backoffice
                     </Link>
                 </li>
             </ul>
