@@ -30,6 +30,12 @@ const Header = () => {
                     </Link>
                 </li>
 
+                <li className="title">
+                    <Link href="/graphql">
+                        GraphQL
+                    </Link>
+                </li>
+
             </ul>
         </nav>
     )
