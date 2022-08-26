@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
     const apiUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772`;
 
     let data = await fetch(apiUrl);
