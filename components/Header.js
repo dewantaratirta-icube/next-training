@@ -36,6 +36,12 @@ const Header = () => {
                     </Link>
                 </li>
 
+                <li className="title">
+                    <Link href="/todos">
+                        Todo
+                    </Link>
+                </li>
+
             </ul>
         </nav>
     )
