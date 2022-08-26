@@ -17,11 +17,19 @@ const Header = () => {
                         Wiki Avatar
                     </Link>
                 </li>
+
                 <li className="title">
                     <Link href="/backoffice">
                         Backoffice
                     </Link>
                 </li>
+
+                <li className="title">
+                    <Link href="/rendering">
+                        Rendering
+                    </Link>
+                </li>
+
             </ul>
         </nav>
     )

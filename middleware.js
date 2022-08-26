@@ -1,4 +1,3 @@
-import { parseCookies } from 'nookies';
 import { NextResponse } from 'next/server';
 
 export function middleware(req) {
@@ -20,11 +19,8 @@ export function middleware(req) {
     if (checkRoles(currentRole) == false) {
         return NextResponse.redirect(new URL('/backoffice', req.url))
     }
-    // if () {
-    // }
-    // return req.push('/login');
 }
 
 export const config = {
-    matcher: '/backoffice/superadmin',
+    matcher: '/backoffice/:path',
 }
