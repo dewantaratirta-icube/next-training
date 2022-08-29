@@ -15,8 +15,8 @@ const Header = () => {
                 </li>
                 <li className="title">
                     <Link href="/">
-                        <Typography variant="h4" component="h2">
-                        Wiki Avatar
+                        <Typography variant="h5" component="h5">
+                            Wiki Avatar
                         </Typography>
                     </Link>
                 </li>
@@ -36,6 +36,14 @@ const Header = () => {
                 <li className="title">
                     <Link href="/graphql">
                         GraphQL
+                    </Link>
+                </li>
+
+                <li className="title">
+                    <Link href="/material">
+                        <Typography variant="h5" component="h5">
+                            Material UI
+                        </Typography>
                     </Link>
                 </li>
 
