@@ -2,8 +2,11 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        '& h5' :{
+        '& h5': {
             fontSize: '72px'
+        },
+        '& button': {
+            transition: 'color .8s, background-color .8s'
         }
     },
     card: {
@@ -14,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        '& h4':{
+        '& h4': {
             display: 'inline-block'
         },
         [theme.breakpoints.down('sm')]: {
@@ -23,12 +26,15 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.between('sm', 'md')]: {
             backgroundColor: 'red',
         },
-        [theme.breakpoints.up('lg')]:{
+        [theme.breakpoints.up('lg')]: {
             backgroundColor: 'blue'
         },
-        [theme.breakpoints.up('xl')]:{
+        [theme.breakpoints.up('xl')]: {
             backgroundColor: 'green'
         },
+    },
+    button: {
+        marginTop: '20px'
     }
 }));
 
