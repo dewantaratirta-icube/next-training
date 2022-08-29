@@ -39,3 +39,32 @@ footer{
 .text-center{
   text-align: center;
 }
+
+@-webkit-keyframes placeholderShimmer {
+  0% {
+    background-position: -120vmin 0;
+  }
+  
+  100% {
+    background-position: 100vmin 0; 
+  }
+}
+
+
+
+.grid .shimmer {
+  border-radius: 4px;
+  width:100%;
+  background-image: linear-gradient(to right, #f6f7f800  0%, var(--secondary-focus) 20%, var(--secondary-focus) 40%, #f6f7f800  100%);
+  background-repeat: no-repeat;
+  background-size: 120% 100%; 
+  display: inline-block;
+  position: relative;
+  
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards; 
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: placeholderShimmer;
+  -webkit-animation-timing-function: linear;
+  margin-bottom:10px;
+  }

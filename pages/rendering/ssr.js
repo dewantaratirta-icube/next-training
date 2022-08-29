@@ -2,15 +2,14 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (context) => {
+    console.log(context.params);
     const apiUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772`;
 
     let data = await fetch(apiUrl);
     let res = await data.json();
 
     let m = res.meals[0];
-
-    console.log(m);
 
     // get ingredients
     let add = { ingredients: [], measure: [] }
@@ -57,7 +56,6 @@ export default function Page({ meal }) {
                                         {
                                             meal.ingredients.length == 0 ? <></>
                                                 : meal.ingredients.map((i, v) => (
-
                                                     (meal.ingredients[v] !== '' && meal.ingredients[v] !== null) ? <li>{meal.ingredients[v]} {meal.measure[v]}</li> : ''
                                                 ))
                                         }

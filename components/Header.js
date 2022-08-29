@@ -1,6 +1,7 @@
 import Link from "next/link";
 // import Logo from "../../public/logo.svg"
 import Image from "next/image";
+import { Typography, TextParagraph } from "@material-ui/core";
 
 const Header = () => {
 
@@ -14,7 +15,9 @@ const Header = () => {
                 </li>
                 <li className="title">
                     <Link href="/">
+                        <Typography variant="h4" component="h2">
                         Wiki Avatar
+                        </Typography>
                     </Link>
                 </li>
 
